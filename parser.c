@@ -83,6 +83,15 @@ void parse_file ( char * filename,
 	if( strcmp(line,"ident") == 0){
       ident(transform);
     }
+	if(strcmp(line, "translate")==0 ||strcmp(line, "move")==0  ){
+		fgets(line, 255, f);
+		line[strlen(line)-1]='\0';
+		sscanf( line, "%d %d %d", &a, &b, &c);
+	struct matrix * m;
+      m = new_matrix(4,4);
+      m = make_translate(a, b, c);
+      matrix_mult(m, transform);
+	}
 	if( strcmp(line,"scale") == 0){
 		fgets(line, 255, f);
 		line[strlen(line)-1]='\0';
