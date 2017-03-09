@@ -85,7 +85,7 @@ angle of rotation and Z as the axis of rotation.
 ====================*/
 struct matrix * make_rotZ(double theta) {
      struct matrix *m;
-	m=new_matrix(4,4);
+	a=new_matrix(4,4);
 	ident(m);
 	
 	m->m[0][0]=cos(0.0174532925*theta);
