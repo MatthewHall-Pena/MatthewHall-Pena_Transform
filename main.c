@@ -7,11 +7,7 @@
 #include "display.h"
 #include "draw.h"
 #include "matrix.h"
-#include "parser.h"
-#include "matrix.c"
-#include "draw.c"
-#include "display.c"
-#include "parser.c"
+
 
 int main(int argc, char **argv) {
 
@@ -27,7 +23,6 @@ int main(int argc, char **argv) {
   else
     parse_file( "stdin", transform, edges, s );
 
-  
   free_matrix( edges );
   free_matrix( transform );
 }  
